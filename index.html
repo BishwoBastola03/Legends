@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Page 1</title>
+  <style>
+    body {
+      background-color: #000;
+      overflow: hidden;
+    }
+
+    .background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .background-video video {
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="background-video">
+    <video autoplay unmuted loop>
+      <source src="video.mp4" type="video/mp4">
+    </video>
+  </div>
+  <script>
+    setTimeout(function() {
+      window.location.href = "page2.html";
+    }, 12000);
+  </script>
+</body>
+</html>
