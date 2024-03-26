@@ -11,29 +11,45 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100px;
-  height: 100px;
-  background-color: #fff;
+  width: 200px;
+  height: 200px;
+  background-image: url("lock-background.png");
+  background-size: cover;
+  background-position: center;
   border: 1px solid #000;
   border-radius: 50%;
   cursor: pointer;
+  margin: auto;
+  text-align: center;
+}
+
+.lock input {
+  margin: 20px;
+  width: 100px;
+  height: 30px;
 }
 </style>
 </head>
 <body>
-<input type="password" id="password" onkeypress="if(event.keyCode == 13) checkPassword()">
-<div class="lock"></div>
+<div class="lock">
+  <p>Welcome</p>
+  <input type="text" id="username" 
+placeholder="Username">
+  <input type="password" id="password" placeholder="Password" onkeypress="if(event.keyCode == 13) checkPassword()">
+</div>
 
 <script>
 function checkPassword() {
+  const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
 
-  if (password === "memmories") {
+  if (username === "correctUsername" && password === "correctPassword") {
     window.location.href = 'page2.html';
   } else {
-    alert("Incorrect password");
+    alert("Incorrect credentials");
   }
 }
+  <link rel="stylesheet" href="styles.css">
 </script>
 </body>
 </html>
