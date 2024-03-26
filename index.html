@@ -28,28 +28,33 @@ body {
   width: 100px;
   height: 30px;
 }
+
+.warning {
+  color: red;
+}
 </style>
 </head>
 <body>
 <div class="lock">
   <p>Welcome</p>
-  <input type="text" id="username" 
-placeholder="Username">
-  <input type="password" id="password" placeholder="Password" onkeypress="if(event.keyCode == 13) checkPassword()">
+  <input type="text" id="username" placeholder="𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙪𝙨𝙚𝙧𝙣𝙖𝙢𝙚">
+  <input type="password" id="password" placeholder="𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙥𝙖𝙨𝙨𝙬𝙤𝙧𝙙" onkeypress="if(event.keyCode == 13) checkPassword()">
+  <button onclick="checkPassword()">Access</button>
+  <div class="warning" id="warningMessage" style="display: none;">Incorrect credentials. Please try again.</div>
 </div>
 
 <script>
 function checkPassword() {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
+  const warningMessage = document.getElementById("warningMessage");
 
-  if (username === "correctUsername" && password === "correctPassword") {
+  if (username === "class10B" && password === "lastbatch") {
     window.location.href = 'page2.html';
   } else {
-    alert("Incorrect credentials");
+    warningMessage.style.display = "block";
   }
 }
-  <link rel="stylesheet" href="styles.css">
 </script>
 </body>
 </html>
