@@ -1,15 +1,39 @@
-<h1 class="animated bounce">Welcome to my website!</h1>
-<p class="animated bounce">This is my website. It is still under construction, but I will be adding new content soon.</p>
-
-<script>
-// Set the interval of time (in milliseconds) after which page2.html will automatically open
-var interval = 5000;
-
-// Create a function to open page2.html
-function openPage2() {
-  window.location.href = "page2.html";
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: #000;
 }
 
-// Set a timeout to call the openPage2() function after the specified interval of time
-setTimeout(openPage2, interval);
+.lock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<input type="password" id="password" onkeypress="if(event.keyCode == 13) checkPassword()">
+<div class="lock"></div>
+
+<script>
+function checkPassword() {
+  const password = document.getElementById("password").value;
+
+  if (password === "memmories") {
+    window.location.href = 'page2.html';
+  } else {
+    alert("Incorrect password");
+  }
+}
 </script>
+</body>
+</html>
