@@ -40,6 +40,7 @@ body {
   <input type="text" id="username" placeholder="𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙪𝙨𝙚𝙧𝙣𝙖𝙢𝙚">
   <input type="password" id="password" placeholder="𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙥𝙖𝙨𝙨𝙬𝙤𝙧𝙙" onkeypress="if(event.keyCode == 13) checkPassword()">
   <button onclick="checkPassword()">Access</button>
+  <button onclick="showInfo()">Info</button>
   <div class="warning" id="warningMessage" style="display: none;">Incorrect credentials. Please try again.</div>
 </div>
 
@@ -55,6 +56,19 @@ function checkPassword() {
     warningMessage.style.display = "block";
   }
 }
+
+function showInfo() {
+  alert("Keep the username and password to access the second page");
+}
 </script>
 </body>
 </html>
+<form>
+  <button onclick="redirectToFacebook()">Owner</button>
+</form>
+
+<script>
+function redirectToFacebook() {
+  window.location.href = 'https://www.facebook.com/m.zenesha';
+}
+</script>
